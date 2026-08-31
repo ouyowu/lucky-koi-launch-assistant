@@ -1,0 +1,16 @@
+{
+  "name": "Lucky Koi Launch Assistant",
+  "ports": [
+    {
+      "name": "static site",
+      "port": 8000
+    }
+  ],
+  "terminals": [
+    {
+      "name": "web",
+      "command": "python3 -m http.server 8000 --bind 0.0.0.0 --directory /workspace",
+      "description": "Serves the static privacy policy site at http://localhost:8000/privacy-policy.html"
+    }
+  ]
+}
