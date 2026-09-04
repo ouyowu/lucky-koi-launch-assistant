@@ -1,0 +1,17 @@
+{
+  "name": "AuspiceEast BaZi Report Generator",
+  "install": "npm install",
+  "ports": [
+    {
+      "name": "next dev",
+      "port": 3000
+    }
+  ],
+  "terminals": [
+    {
+      "name": "dev",
+      "command": "npm run dev -- --hostname 0.0.0.0 --port 3000",
+      "description": "Next.js dev server at http://localhost:3000"
+    }
+  ]
+}
