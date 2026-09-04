@@ -2,14 +2,14 @@ import { Solar } from "lunar-typescript";
 
 export type ElementEn = "Wood" | "Fire" | "Earth" | "Metal" | "Water";
 
-type GanInfo = {
+export type GanInfo = {
   cn: string;
   pinyin: string;
   element: ElementEn;
   yinYang: "Yang" | "Yin";
 };
 
-type ZhiInfo = {
+export type ZhiInfo = {
   cn: string;
   pinyin: string;
   element: ElementEn;
@@ -17,7 +17,7 @@ type ZhiInfo = {
   animalEn: string;
 };
 
-const GAN: Record<string, GanInfo> = {
+export const GAN: Record<string, GanInfo> = {
   甲: { cn: "甲", pinyin: "Jiǎ", element: "Wood", yinYang: "Yang" },
   乙: { cn: "乙", pinyin: "Yǐ", element: "Wood", yinYang: "Yin" },
   丙: { cn: "丙", pinyin: "Bǐng", element: "Fire", yinYang: "Yang" },
@@ -30,7 +30,7 @@ const GAN: Record<string, GanInfo> = {
   癸: { cn: "癸", pinyin: "Guǐ", element: "Water", yinYang: "Yin" },
 };
 
-const ZHI: Record<string, ZhiInfo> = {
+export const ZHI: Record<string, ZhiInfo> = {
   子: { cn: "子", pinyin: "Zǐ", element: "Water", animalCn: "鼠", animalEn: "Rat" },
   丑: { cn: "丑", pinyin: "Chǒu", element: "Earth", animalCn: "牛", animalEn: "Ox" },
   寅: { cn: "寅", pinyin: "Yín", element: "Wood", animalCn: "虎", animalEn: "Tiger" },

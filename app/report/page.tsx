@@ -57,7 +57,7 @@ export default async function ReportPage({ searchParams }: PageProps<"/report">)
     <main className="min-h-full bg-[#f5efe6] px-4 py-10 text-[#1f1b18] print:bg-white print:py-0">
       <div className="mx-auto max-w-3xl">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3 print:hidden">
-          <Link href="/" className="text-sm font-semibold text-[#b64b2f] hover:underline">
+          <Link href="/bazi" className="text-sm font-semibold text-[#b64b2f] hover:underline">
             ← New report
           </Link>
           <DeliveryActions report={report} />
