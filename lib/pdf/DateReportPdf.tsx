@@ -4,6 +4,13 @@ import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 import type { DateCandidate, ZeriReport } from "@/lib/zeri";
 
 const deA = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+// The built-in PDF font has no CJK glyphs; strip Chinese chars from prose and tidy spacing.
+const noCJK = (s: string) =>
+  s
+    .replace(/[\u3000-\u303f\u3400-\u9fff\uf900-\ufaff\uff00-\uffef]/g, "")
+    .replace(/\(\s+/g, "(")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 
 const C = {
   ink: "#33302c",
@@ -105,7 +112,7 @@ function Candidate({ c, rank }: { c: DateCandidate; rank: number }) {
       <Text style={s.label}>Why this date suits you</Text>
       {c.reasons.map((x) => (
         <Text key={x} style={s.li}>
-          - {x}
+          - {noCJK(x)}
         </Text>
       ))}
       {c.cautions.length > 0 && (
@@ -113,7 +120,7 @@ function Candidate({ c, rank }: { c: DateCandidate; rank: number }) {
           <Text style={s.labelCaution}>Gentle cautions</Text>
           {c.cautions.map((x) => (
             <Text key={x} style={s.li}>
-              - {x}
+              - {noCJK(x)}
             </Text>
           ))}
         </>
